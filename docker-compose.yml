@@ -14,5 +14,34 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
 
+  # backend:
+  #   image: node:20
+  #   container_name: backend-dev
+  #   restart: unless-stopped
+  #   working_dir: /app
+  #   volumes:
+  #     - ./backend:/app
+  #   ports:
+  #     - "5000:5000"
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=123456
+  #     - POSTGRES_DB=remote_business_db
+  #   depends_on:
+  #     - db
+
+  # frontend:
+  #   image: node:20
+  #   container_name: frontend-dev
+  #   restart: unless-stopped
+  #   working_dir: /app
+  #   volumes:
+  #     - ./frontend:/app
+  #   ports:
+  #     - "4000:4000"
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=123456
+
 volumes:
   db_data:
