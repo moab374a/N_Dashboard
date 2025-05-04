@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   template: `
     <footer class="footer">
       <div class="footer-content">
-        <span>&copy; {{ currentYear }} Remote Business Management System</span>
+        <span>&copy; {{ currentYear }} Smart Bussiness</span>
         <div class="footer-links">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>

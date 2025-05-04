@@ -864,9 +864,14 @@ export class ProjectDetailComponent implements OnInit {
       )
     ) {
       // Task deletion logic would go here
-      this.snackBar.open('Task deletion is not implemented yet', 'Close', {
+
+      this.project!.tasks = this.project!.tasks.filter(
+        (t) => t.task_id !== task.task_id
+      );
+      this.snackBar.open('Task deleted successfully', 'Close', {
         duration: 3000,
       });
+      this.router.navigate(['/projects', this.project!.project_id]);
     }
   }
 

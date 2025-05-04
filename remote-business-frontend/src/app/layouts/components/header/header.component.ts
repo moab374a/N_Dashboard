@@ -33,7 +33,7 @@ import { User } from '../../../core/models/auth.models';
         <mat-icon>menu</mat-icon>
       </button>
 
-      <span class="app-title">Remote Business</span>
+      <span class="app-title">Smart Bussiness</span>
 
       <span class="spacer"></span>
 

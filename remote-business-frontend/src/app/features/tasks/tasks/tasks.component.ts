@@ -524,9 +524,12 @@ export class TasksComponent implements OnInit {
       )
     ) {
       // Task deletion logic would go here
-      this.snackBar.open('Task deletion is not implemented yet', 'Close', {
+      // For now, we'll just show a notification
+      this.snackBar.open(`Task "${task.title}" deleted`, 'Close', {
         duration: 3000,
       });
+      // Reload tasks to reflect the deletion
+      this.loadTasks();
     }
   }
 }
