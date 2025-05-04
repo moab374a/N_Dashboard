@@ -105,10 +105,7 @@ import { User } from '../../../core/models/auth.models';
             <mat-icon>account_circle</mat-icon>
             <span>Profile</span>
           </button>
-          <button mat-menu-item routerLink="/profile/settings">
-            <mat-icon>settings</mat-icon>
-            <span>Settings</span>
-          </button>
+
           <mat-divider></mat-divider>
           <button mat-menu-item (click)="logout()">
             <mat-icon>exit_to_app</mat-icon>

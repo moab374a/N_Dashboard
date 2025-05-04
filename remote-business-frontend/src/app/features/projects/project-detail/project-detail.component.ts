@@ -201,13 +201,6 @@ import { ProjectDetail, Task } from '../../../core/models/project.models';
                     <h3 class="task-title">{{ task.title }}</h3>
 
                     <div class="task-details">
-                      <div class="task-detail">
-                        <mat-icon>person</mat-icon>
-                        <span>{{
-                          task.assignee_first_name || 'Unassigned'
-                        }}</span>
-                      </div>
-
                       <div class="task-detail" *ngIf="task.due_date">
                         <mat-icon>event</mat-icon>
                         <span>{{ task.due_date | date : 'mediumDate' }}</span>
@@ -256,18 +249,6 @@ import { ProjectDetail, Task } from '../../../core/models/project.models';
                 <mat-icon>assignment</mat-icon>
                 <h3>No tasks yet</h3>
                 <p>Create your first task to get started</p>
-                <button
-                  mat-raised-button
-                  color="primary"
-                  [routerLink]="[
-                    '/projects',
-                    project.project_id,
-                    'tasks',
-                    'new'
-                  ]"
-                >
-                  <mat-icon>add</mat-icon> Add Task
-                </button>
               </div>
             </div>
           </mat-tab>
@@ -276,9 +257,6 @@ import { ProjectDetail, Task } from '../../../core/models/project.models';
             <div class="tab-content">
               <div class="tab-header">
                 <h2>Team Members</h2>
-                <button mat-raised-button color="primary">
-                  <mat-icon>person_add</mat-icon> Add Member
-                </button>
               </div>
 
               <div class="team-list" *ngIf="project.members.length > 0">
@@ -311,16 +289,7 @@ import { ProjectDetail, Task } from '../../../core/models/project.models';
                     <mat-icon>more_vert</mat-icon>
                   </button>
 
-                  <mat-menu #memberMenu="matMenu">
-                    <button mat-menu-item>
-                      <mat-icon>edit</mat-icon>
-                      <span>Change Role</span>
-                    </button>
-                    <button mat-menu-item color="warn">
-                      <mat-icon color="warn">person_remove</mat-icon>
-                      <span>Remove</span>
-                    </button>
-                  </mat-menu>
+                  <mat-menu #memberMenu="matMenu"> </mat-menu>
                 </div>
               </div>
 
@@ -331,58 +300,6 @@ import { ProjectDetail, Task } from '../../../core/models/project.models';
                 <button mat-raised-button color="primary">
                   <mat-icon>person_add</mat-icon> Add Team Member
                 </button>
-              </div>
-            </div>
-          </mat-tab>
-
-          <mat-tab
-            label="Documents"
-            [disabled]="!project.documents || project.documents.length === 0"
-          >
-            <div class="tab-content">
-              <div class="tab-header">
-                <h2>Documents</h2>
-                <button mat-raised-button color="primary">
-                  <mat-icon>upload_file</mat-icon> Upload Document
-                </button>
-              </div>
-
-              <div
-                class="documents-list"
-                *ngIf="project.documents && project.documents.length > 0"
-              >
-                <div
-                  *ngFor="let document of project.documents"
-                  class="document-item"
-                >
-                  <div class="document-icon">
-                    <mat-icon>description</mat-icon>
-                  </div>
-
-                  <div class="document-info">
-                    <h3 class="document-title">{{ document.title }}</h3>
-                    <div class="document-details">
-                      <span class="document-type">{{
-                        document.file_type
-                      }}</span>
-                      <span class="document-size">{{
-                        formatFileSize(document.file_size)
-                      }}</span>
-                      <span class="document-date">{{
-                        document.uploaded_at | date : 'medium'
-                      }}</span>
-                    </div>
-                  </div>
-
-                  <div class="document-actions">
-                    <button mat-icon-button matTooltip="Download">
-                      <mat-icon>download</mat-icon>
-                    </button>
-                    <button mat-icon-button matTooltip="Delete">
-                      <mat-icon color="warn">delete</mat-icon>
-                    </button>
-                  </div>
-                </div>
               </div>
             </div>
           </mat-tab>

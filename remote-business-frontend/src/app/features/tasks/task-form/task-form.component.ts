@@ -81,16 +81,6 @@ import { UserService } from '../../../core/services/user.service';
                   Project is required
                 </mat-error>
               </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Assignee</mat-label>
-                <mat-select formControlName="assigneeId">
-                  <mat-option [value]="null">Unassigned</mat-option>
-                  <mat-option *ngFor="let user of users" [value]="user.id">
-                    {{ user.firstName }} {{ user.lastName }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
             </div>
 
             <div class="form-row">
