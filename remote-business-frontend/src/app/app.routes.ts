@@ -1,4 +1,3 @@
-// src/app/app.routes.ts
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
@@ -17,6 +16,18 @@ export const routes: Routes = [
           import('./features/dashboard/dashboard.component').then(
             (c) => c.DashboardComponent
           ),
+      },
+      {
+        path: 'projects',
+        loadChildren: () =>
+          import('./features/projects/projects.routes').then(
+            (r) => r.PROJECTS_ROUTES
+          ),
+      },
+      {
+        path: 'tasks',
+        loadChildren: () =>
+          import('./features/tasks/tasks.routes').then((r) => r.TASKS_ROUTES),
       },
       {
         path: 'privacy-policy',
