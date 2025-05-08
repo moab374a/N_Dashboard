@@ -19,23 +19,23 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'projects',
-        loadChildren: () =>
-          import('./features/projects/projects.routes').then(
-            (r) => r.PROJECTS_ROUTES
-          ),
-      },
-      {
-        path: 'tasks',
-        loadChildren: () =>
-          import('./features/tasks/tasks.routes').then((r) => r.TASKS_ROUTES),
-      },
-      {
-        path: 'profile',
+        path: 'privacy-policy',
         loadComponent: () =>
-          import('./features/profile/profile.component').then(
-            (c) => c.ProfileComponent
+          import('./Pages/privacy-policy/privacy-policy.component').then(
+            (c) => c.PrivacyPolicyComponent
           ),
+      },
+      {
+        path: 'terms-of-service',
+        loadComponent: () =>
+          import('./Pages/terms-of-service/terms-of-service.component').then(
+            (c) => c.TermsOfServiceComponent
+          ),
+      },
+      {
+        path: 'help',
+        loadComponent: () =>
+          import('./Pages/Help/help.component').then((c) => c.HelpComponent),
       },
     ],
   },
@@ -50,35 +50,6 @@ export const routes: Routes = [
             (c) => c.LoginComponent
           ),
       },
-      {
-        path: 'register',
-        loadComponent: () =>
-          import('./features/auth/register/register.component').then(
-            (c) => c.RegisterComponent
-          ),
-      },
-      {
-        path: 'forgot-password',
-        loadComponent: () =>
-          import(
-            './features/auth/forgot-password/forgot-password.component'
-          ).then((c) => c.ForgotPasswordComponent),
-      },
-      {
-        path: 'reset-password/:token',
-        loadComponent: () =>
-          import(
-            './features/auth/reset-password/reset-password.component'
-          ).then((c) => c.ResetPasswordComponent),
-      },
-      {
-        path: 'two-factor',
-        loadComponent: () =>
-          import('./features/auth/two-factor/two-factor.component').then(
-            (c) => c.TwoFactorComponent
-          ),
-      },
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
     ],
   },
   { path: '**', redirectTo: '' },
