@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'; // Import RouterModule for routerLink
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule], // Add RouterModule to imports
   template: `
     <footer class="footer">
       <div class="footer-content">
         <span>&copy; {{ currentYear }} Smart Bussiness</span>
         <div class="footer-links">
-          <a href="#" class="footer-link">Privacy Policy</a>
-          <a href="#" class="footer-link">Terms of Service</a>
-          <a href="#" class="footer-link">Help</a>
+          <a routerLink="/privacy-policy" class="footer-link">Privacy Policy</a>
+          <a routerLink="/terms-of-service" class="footer-link">Terms of Service</a>
+          <a routerLink="/help" class="footer-link">Help</a>
         </div>
       </div>
     </footer>
